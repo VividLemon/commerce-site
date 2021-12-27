@@ -5052,10 +5052,10 @@ obuf@^1.0.0, obuf@^1.1.2:
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==
 
-ohmyfetch@^0.4.6:
-  version "0.4.11"
-  resolved "https://registry.yarnpkg.com/ohmyfetch/-/ohmyfetch-0.4.11.tgz#94743160dbde6bb21309f79d3a003a54b11a99ce"
-  integrity sha512-HfD15iWbISD7eCqtsKoOU35b54/fuaNRGUN0Jr1v8tyP7yLrebvqqkISLAOyrQSpUExPOrXNPk0ykfgpqkRdaQ==
+ohmyfetch@^0.4.14:
+  version "0.4.14"
+  resolved "https://registry.yarnpkg.com/ohmyfetch/-/ohmyfetch-0.4.14.tgz#2382a7e86d0a3d307d35666cbc7499699769a174"
+  integrity sha512-kWllHM3DVJdwB4BpEoHhe+JUviDArit3ZQyVI2X2sxhCYZXlGHAABrsjJ07bac0RG3tae08BnKWy4eRMPKMh4w==
   dependencies:
     destr "^1.1.0"
     node-fetch "^3.0.0"
