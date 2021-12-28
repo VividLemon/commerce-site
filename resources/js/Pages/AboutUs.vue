@@ -8,7 +8,7 @@
       <template #head>
         <c-tr>
           <c-th>
-            Hel
+            hello
           </c-th>
         </c-tr>
       </template>

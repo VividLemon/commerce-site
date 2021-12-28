@@ -1,26 +1,24 @@
 // import { DepartmentDataAccess as dda } from '../../api'
 
 const state = () => ({
-	departments: {
-		allDepartments: []
-	}
+	allDepartments: []
 })
 const mutations = {
 	SET_ALL_DEPARTMENTS (state, payload) {
-		state.departments.allDepartments = payload
+		state.allDepartments = payload
 	},
 	ADD_SINGLE_DEPARTMENT (state, payload) {
-		state.departments.allDepartments.push(payload)
+		state.allDepartments.push(payload)
 	},
 	UPDATE_SINGLE_DEPARTMENT (state, payload) {
-		const index = state.departments.allDepartments.findIndex((element) => element.id === payload.id)
+		const index = state.allDepartments.findIndex((element) => element.id === payload.id)
 
-		state.departments.allDepartments[index] = payload
+		state.allDepartments[index] = payload
 	}
 }
 
 const getters = {
-	getAllDepartments: (state) => state.departments.allDepartments
+	getAllDepartments: (state) => state.allDepartments
 }
 
 export default {

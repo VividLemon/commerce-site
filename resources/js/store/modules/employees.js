@@ -1,26 +1,24 @@
 // import { EmployeeDataAccess as eda } from '../../api'
 
 const state = () => ({
-	employees: {
-		allEmployees: []
-	}
+	allEmployees: []
 })
 const mutations = {
 	SET_ALL_EMPLOYEES (state, payload) {
-		state.employees.allEmployees = payload
+		state.allEmployees = payload
 	},
 	ADD_SINGLE_EMPLOYEE (state, payload) {
-		state.employees.allEmployees.push(payload)
+		state.allEmployees.push(payload)
 	},
 	UPDATE_SINGLE_EMPLOYEE (state, payload) {
-		const index = state.employees.allEmployees.findIndex((element) => element.id === payload.id)
+		const index = state.allEmployees.findIndex((element) => element.id === payload.id)
 
-		state.employees.allEmployees[index] = payload
+		state.allEmployees[index] = payload
 	}
 }
 
 const getters = {
-	getAllEmployees: (state) => state.employees.allEmployees
+	getAllEmployees: (state) => state.allEmployees
 }
 
 export default {

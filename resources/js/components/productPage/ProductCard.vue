@@ -9,7 +9,7 @@
     <p>
       {{ product.description }}
     </p>
-    <h3 class="text-green-700">
+    <h3 class="text-green-700 dark:text-green-500">
       {{ product.price.toLocaleString('en-US', { style: 'currency', currency: 'USD'}) }}
     </h3>
     <div class="my-1 flex justify-center">

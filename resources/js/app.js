@@ -1,7 +1,7 @@
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import { InertiaProgress } from '@inertiajs/progress'
-import store from './store/index'
+import { store } from './store/index'
 
 require('./bootstrap')
 
@@ -12,6 +12,7 @@ createInertiaApp({
 		return createApp({ render: () => h(app, props) })
 			.use(plugin)
 			.use(store)
+			// eslint-disable-next-line no-undef
 			.mixin({ methods: { route } })
 			.mount(el)
 	}

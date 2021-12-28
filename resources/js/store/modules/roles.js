@@ -1,26 +1,24 @@
 // import { RoleDataAccess as rda } from '../../api'
 
 const state = () => ({
-	roles: {
-		userRoles: []
-	}
+	userRoles: []
 })
 const mutations = {
 	SET_ALL_USER_ROLES (state, payload) {
-		state.roles.userRoles = payload
+		state.userRoles = payload
 	},
 	ADD_SINGLE_ROLE (state, payload) {
-		state.roles.userRoles.push(payload)
+		state.userRoles.push(payload)
 	},
 	UPDATE_SINGLE_ROLE (state, payload) {
-		const index = state.roles.userRoles.findIndex((element) => element.id === payload.id)
+		const index = state.userRoles.findIndex((element) => element.id === payload.id)
 
-		state.roles.userRoles[index] = payload
+		state.userRoles[index] = payload
 	}
 }
 
 const getters = {
-	getAllRoles: (state) => state.roles.userRoles
+	getAllRoles: (state) => state.userRoles
 }
 
 export default {

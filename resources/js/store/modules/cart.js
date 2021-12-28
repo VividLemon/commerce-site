@@ -1,44 +1,42 @@
 import Cookie from 'js-cookie'
 
 const state = () => ({
-	cart: {
-		products: []
-	}
+	products: []
 })
 const mutations = {
 	SET_COOKIES_TO_CART (state, payload) {
-		state.cart.products = JSON.parse(payload)
+		state.products = JSON.parse(payload)
 	},
 	ADD_PRODUCT_TO_CART (state, payload) {
-		payload.quantity = 1
-		const filter = state.cart.products.filter((product) => { return product.id === payload.id })
+		const product = state.products.find((product) => product.id === payload.id)
 
-		if (filter.length) {
-			filter[0].quantity++
+		if (product) {
+			product.quantity++
 		} else {
-			state.cart.products.push(payload)
+			payload.quantity = 1
+			state.products.push(payload)
 		}
 		if (state.cookiesPreference) {
-			const cart = JSON.stringify(state.cart.products)
+			const cart = JSON.stringify(state.products)
 
 			Cookie.set('cart-deletable', cart, { sameSite: 'strict', secure: true, expires: 7 })
 		}
 	},
 	REMOVE_PRODUCT_FROM_CART (state, id) {
-		state.cart.products.splice(state.cart.products.findIndex((element) => element.id === id), 1)
+		state.products.splice(state.products.findIndex((element) => element.id === id), 1)
 		if (state.cookiesPreference) {
-			const cart = JSON.stringify(state.cart.products)
+			const cart = JSON.stringify(state.products)
 
 			Cookie.set('cart-deletable', cart, { sameSite: 'strict', secure: true, expires: 7 })
 		}
 	},
 	UPDATE_CART_QUANTITY (state, { product, quantity }) {
 		product.quantity = quantity
-		const index = state.cart.products.findIndex((el) => el.id === product.id)
+		const index = state.products.findIndex((el) => el.id === product.id)
 
-		state.cart.products.splice(index, 1, product)
+		state.products.splice(index, 1, product)
 		if (state.cookiesPreference) {
-			const cart = JSON.stringify(state.cart.products)
+			const cart = JSON.stringify(state.products)
 
 			Cookie.set('cart-deletable', cart, { sameSite: 'strict', secure: true, expires: 7 })
 		}
@@ -50,9 +48,9 @@ const mutations = {
 }
 
 const getters = {
-	getCart: (state) => state.cart.products,
+	getCart: (state) => state.products,
 	getCookiePreference: (state) => state.cookiesPreference,
-	getCartSize: (state) => state.cart.products.length
+	getCartSize: (state) => state.products.length
 }
 
 export default {

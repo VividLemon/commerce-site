@@ -1,26 +1,24 @@
 // import { ProductTypeDataAccess as ptda } from '../../api'
 
 const state = () => ({
-	productTypes: {
-		allProductTypes: []
-	}
+	allProductTypes: []
 })
 const mutations = {
 	SET_ALL_PRODUCT_TYPES (state, payload) {
-		state.productTypes.allProductTypes = payload
+		state.allProductTypes = payload
 	},
 	ADD_SINGLE_PRODUCT_TYPE (state, payload) {
-		state.productTypes.allProductTypes.push(payload)
+		state.allProductTypes.push(payload)
 	},
 	UPDATE_SINGLE_PRODUCT_TYPE (state, payload) {
-		const index = state.productTypes.allProductTypes.findIndex((element) => element.id === payload.id)
+		const index = state.allProductTypes.findIndex((element) => element.id === payload.id)
 
-		state.productTypes.allProductTypes[index] = payload
+		state.allProductTypes[index] = payload
 	}
 }
 
 const getters = {
-	getAllProductTypes: (state) => state.productTypes.allProductTypes
+	getAllProductTypes: (state) => state.allProductTypes
 }
 
 export default {

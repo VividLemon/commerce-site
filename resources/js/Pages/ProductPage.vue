@@ -11,7 +11,7 @@
       <div class="col-span-3 m-2">
         <h1>{{ product.name }}</h1>
         <h2>{{ product.description }}</h2>
-        <h2 class="text-green-700">
+        <h2 class="text-green-700 dark:text-green-500">
           {{ product.price.toLocaleString('en-US', { style: 'currency', currency: 'USD'}) }}
         </h2>
         <button

@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 import cart from './modules/cart'
 import departments from './modules/departments'
 import employees from './modules/employees'
@@ -7,7 +8,7 @@ import productTypes from './modules/productTypes'
 import roles from './modules/roles'
 import users from './modules/users'
 
-export default createStore({
+export const store = createStore({
 	modules: {
 		cart,
 		departments,
@@ -17,5 +18,6 @@ export default createStore({
 		roles,
 		users
 	},
-	strict: process.env.NODE_ENV !== 'production'
+	strict: process.env.NODE_ENV !== 'production',
+	plugins: [createPersistedState()]
 })
